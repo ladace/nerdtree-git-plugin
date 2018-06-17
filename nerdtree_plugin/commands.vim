@@ -19,6 +19,7 @@ function! s:gitAdd(node)
 endfunction
 
 function! s:gitCommit(node)
+    echo system('git status')
     let l:message = input("commit message:")
     if strlen(l:message) != 0
         echo system('git commit -m "' . l:message . '"')
